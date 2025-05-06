@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x, y;
+    double a;
+    
+    while (1) {
+        printf("Введіть цілі значення x та y: ");
+        scanf("%d %d", &x, &y);
+
+        double denominator = pow(x, 2) + 4;
+
+        if (denominator == 0) {
+            printf("Помилка: у виразі виконується ділення на 0. Задайте інші значення.\n");
+            continue;
+        }
+
+        double e_part = exp(-pow(x, 2));
+        double numerator = x + (double)y / denominator;
+        double denominator_total = e_part + 1.0 / denominator;
+
+        if (denominator_total == 0) {
+            printf("Помилка: у загальному знаменнику виконується ділення на 0. Задайте інші значення.\n");
+            continue;
+        }
+
+        a = (1 + y) * (numerator / denominator_total);
+        break;
+    }
+
+    printf("Значення функції a = %.6lf\n", a);
+    return 0;
+}
