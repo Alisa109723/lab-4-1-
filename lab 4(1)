@@ -29,6 +29,6 @@ int main() {
         break;
     }
 
-    printf("Значення функції a = %.6lf\n", a);
+    printf("Значення функції a = %.2lf\n", a);
     return 0;
 }
